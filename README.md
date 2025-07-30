@@ -17,9 +17,9 @@ First, create a new resource group and name it "ActiveDirectoryLab".
 <br>Next, connect to "dc1" using Remote Desktop Connection and entering the public ip address.
 <img width="1432" height="805" alt="image" src="https://github.com/user-attachments/assets/e420d9d1-45ec-4258-a0ae-4913f17b2a7e" />
 
-<br>Disable Windows Firewall. Cllick the start button then select run and type "wf.msc". Click on the Windows Defender Firewall Properties and turn off in all the tabs and click "Apply" and "OK"
+<br>Disable Windows Firewall. Click the start button then select run and type "wf.msc". Click on the Windows Defender Firewall Properties and turn off in all the tabs and click "Apply" and "OK"
 
-<br>Point the virtual machine "client1" to look up DNS on "dc-1" by setting the DNS server as the Private IP of "dc1". Click on virtual machines in the Azure portal and select "client1" and then "Network Settings". Then click on the NIC at the top labeled as "ipconfig1". Select the DNS Servers then select the "Custom" bullet under DNS servers and enter the Private IP address of "dc1" then click "Save" at the top.
+<br>Point the virtual machine "client1" to look up DNS on "dc1" by setting the DNS server as the Private IP of "dc1". Click on virtual machines in the Azure portal and select "client1" and then "Network Settings". Then click on the NIC at the top labeled as "ipconfig1". Select the DNS Servers then select the "Custom" bullet under DNS servers and enter the Private IP address of "dc1" then click "Save" at the top.
 <img width="1432" height="805" alt="image" src="https://github.com/user-attachments/assets/fd5558df-13fb-4f9a-a94d-e1cdc39fc5c3" />
 
 <br>Restart "client1".
@@ -58,7 +58,7 @@ First, create a new resource group and name it "ActiveDirectoryLab".
 <br>Log on to "dc1" as "jane_admin".
 <img width="1432" height="805" alt="image" src="https://github.com/user-attachments/assets/47c44c15-514e-4594-b982-0aa45ac90133" />
 
-<br>Now join "client1" to the domain. Log into "client-1". Right click on the start button and select "System", "Rename this PC", and "Change". Click the "Domain" bullet. Type "mydomain.com" and click on the "OK" button. When a pop up window appears, enter "jane_admin" credentials . Once completed, the virtual machine will restart.
+<br>Now join "client1" to the domain. Log into "client1". Right click on the start button and select "System", "Rename this PC", and "Change". Click the "Domain" bullet. Type "mydomain.com" and click on the "OK" button. When a pop up window appears, enter "jane_admin" credentials . Once completed, the virtual machine will restart.
 <img width="1432" height="805" alt="image" src="https://github.com/user-attachments/assets/a511627b-b01b-4269-975f-632a76248ef0" />
 
 <br>Now log into "dc1" and create a new tree in the Active Directory called "_Clients". Click on the start button. Then select the "Windows Administrative Tools" and select "Active Directory Users and Computers". Once opened right click on "mydomain.com" drag down to "New" and select "Organinizational Unit". In the name field type "_CLIENTS" and click the "Ok" button at the bottom.
@@ -89,7 +89,6 @@ First, create a new resource group and name it "ActiveDirectoryLab".
 <img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2826eb4b-bf79-4268-a5dd-31d96ebfbaf0" />
 
 <br>Log back into "client1" with the correct credentials for the user's account we just unlocked.
-<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/2d17b240-369a-445e-8901-916ed3f42a2c" />
 
 
 <br>Now perform a password reset on a user within Active Directory on "dc1". Log back into "dc1" and find the user in Active Directory. When logged in click on the start button. Then select the "Windows Administrative Tools" and select "Active Directory Users and Computers". Navigate to the "_EMPLOYEES" folder and find the user and right click on the user then select "Reset Password". Enter in the new password and then press "OK"
